@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush's Website</title>
+</head>
+<body>
+
+    <h1><b>Top {{size}} of my favourite project of all time</b></h1>
+    {% include 'navbar.html' %}
+<br>
+
+       
+ <table>
+    <tr>
+        <th>Title</th>
+        <th>vote</th>
+        <th>ratio </th>
+        <th>date </th>
+        
+    </tr>
+  
+   
+    {% for project in queryset %}
+    <tr>
+        <td>>{{project.title}}</td>
+        <td>{{project.vote_ratio}}%</td>
+        <td></td>
+        <td>{{project.date_of_creation}}</td>
+        <td><a href="{% url 'ayush' project.user_id %}">view </a</td>
+        <td><a href="{% url 'update_form' project.user_id %}">edit </a</td>
+        <td><a href="{% url 'delete_project' project.user_id %}">delete </a</td>
+        
+    </tr>
+   
+    {% endfor %}
+   
+ </table> 
+  
+  
+
+</body>
+</html>
