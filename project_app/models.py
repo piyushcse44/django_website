@@ -57,4 +57,3 @@ class Student(models.Model):
 
 
 
-
