@@ -43,6 +43,14 @@ class Tag(models.Model):
         return(self.name)
 
 
+class Student(models.Model):
+    id = models.IntegerField(default =1,unique=True,primary_key=True)
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(validators=[MaxValueValidator(200)])
+
+    def __str__(self):
+        return(self.name)
+
 
 
 
